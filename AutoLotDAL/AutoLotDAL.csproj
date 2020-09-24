@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="EF\AutoLotEntities.cs" />
     <Compile Include="EF\MyDataInitializer.cs" />
+    <Compile Include="Interception\ConsoleWriterInterceptor.cs" />
     <Compile Include="Migrations\202009231850332_Initial.cs" />
     <Compile Include="Migrations\202009231850332_Initial.designer.cs">
       <DependentUpon>202009231850332_Initial.cs</DependentUpon>
@@ -62,12 +63,6 @@
       <DependentUpon>202009231923570_Final.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Base.cs" />
-    <Compile Include="Models\Inventory.cs" />
-    <Compile Include="Models\InventoryPartial.cs" />
-    <Compile Include="Models\CreditRisk.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BaseRepo.cs" />
     <Compile Include="Repos\InventoryRepo.cs" />
@@ -84,6 +79,12 @@
     <EmbeddedResource Include="Migrations\202009231923570_Final.resx">
       <DependentUpon>202009231923570_Final.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoLotDAL.Models\AutoLotDAL.Models.csproj">
+      <Project>{b3c1b727-7f38-40ff-b3ce-5bd1e8f11cbf}</Project>
+      <Name>AutoLotDAL.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
